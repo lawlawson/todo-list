@@ -3,7 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
     <title>Todo List</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <form>
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Write anything and hit enter to add to list"
+          autocomplete="off" />
+        <button id="add-button">ADD</button>
+      </form>
+      <ul id="todo-list">
+        <li class="todo">
+          <input type="checkbox" id="todo-1" />
+          <label for="todo-1" class="custom-checkbox">
+            <i class="fa-regular fa-circle-check"></i>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>
