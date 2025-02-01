@@ -1,0 +1,22 @@
+:root {
+  --background-clr: #ffe6a7;
+  --primary-clr: #bb9457;
+  --text-clr: #000000;
+  --accent-clr: #d1ffc6;
+}
+
+html {
+  font-family: 'Happy Monkey', serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-clr);
+}
+
+body {
+  min-height: 100vh;
+  padding: 10px;
+  background-color: var(--background-clr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
