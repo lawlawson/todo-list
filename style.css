@@ -2,6 +2,7 @@
   --background-clr: #ffe6a7;
   --primary-clr: #bb9457;
   --text-clr: #000000;
+  --text-alt-clr: #ffffff;
   --accent-clr: #d1ffc6;
 }
 
@@ -49,4 +50,26 @@ h1 {
   font: inherit;
   color: var(--text-clr);
   caret-color: var(--accent-clr);
+}
+
+#todo-input:focus {
+  outline: 1px solid var(--primary-clr);
+}
+
+form {
+  position: relative;
+}
+
+#add-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--primary-clr);
+  height: 100%;
+  padding: 0 30px;
+  border: none;
+  border-radius: 1000px;
+  font: inherit;
+  color: var(--text-alt-clr);
+  cursor: pointer;
 }
