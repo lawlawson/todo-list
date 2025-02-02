@@ -29,7 +29,7 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   color: var(--text-clr);
-  text-shadow: 2px 2px 2px var(--accent-clr);
+  text-shadow: 2px 2px 2px var(--text-alt-clr);
 }
 
 .container {
@@ -72,4 +72,72 @@ form {
   font: inherit;
   color: var(--text-alt-clr);
   cursor: pointer;
+}
+
+.todo {
+  margin-bottom: 10px;
+  padding: 0 16px;
+  background-color: var(--primary-clr);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.todo .todo-text {
+  padding: 15px;
+  padding-right: 0;
+  flex-grow: 1;
+  transition: 200ms ease;
+}
+
+.fa-trash-can {
+  padding: 3px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.fa-trash-can:hover {
+  color: #ff0033;
+}
+
+.fa-trash-can {
+  transition: 200ms ease;
+}
+
+.custom-checkbox {
+  border: 2px solid var(--text-alt-clr);
+  border-radius: 50%;
+  min-height: 20px;
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: 200ms ease;
+  cursor: pointer;
+}
+
+.fa-circle-check {
+  opacity: 0;
+}
+
+input[type='checkbox']:checked ~ .custom-checkbox {
+  background-color: var(--text-alt-clr);
+}
+
+input[type='checkbox']:checked ~ .custom-checkbox .fa-circle-check {
+  opacity: 1;
+}
+
+input[type='checkbox']:checked ~ .todo-text {
+  text-decoration: line-through;
+  color: var(--accent-clr);
+}
+
+input[type='checkbox'] {
+  display: none;
 }
