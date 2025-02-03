@@ -1,6 +1,7 @@
 :root {
   --background-clr: #ffe6a7;
   --primary-clr: #bb9457;
+  --secondary-clr: #f3c969;
   --text-clr: #000000;
   --text-alt-clr: #ffffff;
   --accent-clr: #d1ffc6;
@@ -82,24 +83,26 @@ form {
 }
 
 .todo {
-  margin-bottom: 10px;
-  padding: 0 16px;
-  background-color: var(--primary-clr);
-  border-radius: 15px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 16px;
+  background-color: var(--secondary-clr);
+  border-radius: 15px;
+  gap: 10px;
+  width: 100%;
 }
 
-.todo .todo-text {
+.todo-text {
+  flex-grow: 1;
   padding: 15px;
   padding-right: 0;
-  flex-grow: 1;
   transition: 200ms ease;
 }
 
 .fa-trash-can {
-  padding: 3px;
+  margin-left: auto;
+  padding: 8px;
   background: none;
   border: none;
   display: flex;
@@ -110,10 +113,6 @@ form {
 
 .fa-trash-can:hover {
   color: #ff0033;
-}
-
-.fa-trash-can {
-  margin-left: auto;
   transition: 200ms ease;
 }
 
