@@ -48,6 +48,7 @@ function createTodoItem(todo, todoIndex) {
     <label for="${todoId}" class="todo-text">
       ${todoText}
     </label>
+    <i class="fa-regular fa-edit edit-button"></i>
     <i class="fa-regular fa-trash-can"></i>
   </li>
   
@@ -57,6 +58,12 @@ function createTodoItem(todo, todoIndex) {
   deleteButton.addEventListener('click', () => {
     deleteTodoItem(todoIndex);
   });
+
+  const editButton = todoLi.querySelector('.edit-button');
+  editButton.addEventListener('click', () => {
+    enableEditMode(todoLi, todoIndex);
+  });
+
   const checkbox = todoLi.querySelector('input');
   checkbox.addEventListener('change', () => {
     allTodos[todoIndex].completed = checkbox.checked;
@@ -80,4 +87,37 @@ function deleteTodoItem(todoIndex) {
   allTodos = allTodos.filter((_, i) => i !== todoIndex);
   saveTodos();
   updateTodoList();
+}
+
+function enableEditMode(todoLi, todoIndex) {
+  const todoTextLabel = todoLi.querySelector('.todo-text');
+  const currentText = todoTextLabel.innerText;
+
+  const editInput = document.createElement('input');
+  editInput.type = 'text';
+  editInput.value = currentText;
+  editInput.className = 'edit-input';
+
+  todoTextLabel.replaceWith(editInput);
+  editInput.focus();
+
+  editInput.addEventListener('blur', () => {
+    saveEditedTodo(todoIndex, editInput.value.trim(), todoLi);
+  });
+
+  editInput.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+      saveEditedTodo(todoIndex, editInput.value.trim(), todoLi);
+    }
+  });
+}
+
+function saveEditedTodo(todoIndex, newText, todoLi) {
+  if (newText.length > 0) {
+    allTodos[todoIndex].text = newText;
+    saveTodos();
+    updateTodoList();
+  } else {
+    updateTodoList();
+  }
 }

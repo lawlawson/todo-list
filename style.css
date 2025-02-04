@@ -85,7 +85,7 @@ form {
 .todo {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 10px 0;
   padding: 0 16px;
   background-color: var(--secondary-clr);
   border-radius: 15px;
