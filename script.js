@@ -1,6 +1,8 @@
 const todoForm = document.querySelector('form');
 const todoInput = document.getElementById('todo-input');
 const todoListUl = document.getElementById('todo-list');
+const popup = document.getElementById('popup');
+const closePopupButton = document.getElementById('close-popup');
 
 let allTodos = getTodos();
 updateTodoList();
@@ -22,8 +24,20 @@ function addTodo() {
     updateTodoList();
     saveTodos();
     todoInput.value = '';
+  } else {
+    showPopup();
   }
 }
+
+function showPopup() {
+  popup.style.display = 'flex';
+}
+
+function hidePopup() {
+  popup.style.display = 'none';
+}
+
+closePopupButton.addEventListener('click', hidePopup);
 
 function updateTodoList() {
   todoListUl.innerHTML = '';
